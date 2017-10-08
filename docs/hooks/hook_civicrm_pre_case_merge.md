@@ -18,12 +18,11 @@ Added in CiviCRM 4.5
 
 ## Parameters
 
--   $mainContactId - Contact ID of the new case (if set already)
--   $mainCaseId - Case ID of the new case (if set already)
--   $otherContactId - Contact ID of the original case
--   $otherCaseId - Case ID of the original case
--   $changeClient - boolean if this function is called to change
-    clients
+- `$mainContactId` - Contact ID of the new case (if set already)
+- `$mainCaseId` - Case ID of the new case (if set already)
+- `$otherContactId` - Contact ID of the original case
+- `$otherCaseId` - Case ID of the original case
+- `$changeClient` - boolean if this function is called to change clients
 
 ## Return
 
@@ -31,8 +30,7 @@ Added in CiviCRM 4.5
 
 ## Example
 
-See for an example the documentation of the
-[hook_civicrm_post_case_merge](/hooks/hook_civicrm_post_case_merge.md)
+See for an example the documentation of the [hook_civicrm_post_case_merge](/hooks/hook_civicrm_post_case_merge.md)
 
 ## See also
 

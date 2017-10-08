@@ -18,7 +18,8 @@ With this hook you can provide your own query objects which alter or extend the 
 
 ## Example
 
-
-    function hook_civicrm_batchQuery(&$query) {
-      $query = "SELECT * FROM civicrm_financial_item";
-    }
+```php
+function hook_civicrm_batchQuery(&$query) {
+  $query = "SELECT * FROM civicrm_financial_item";
+}
+```

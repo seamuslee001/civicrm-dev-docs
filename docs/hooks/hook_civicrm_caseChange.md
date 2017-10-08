@@ -14,11 +14,11 @@ This hook is available in CiviCRM 4.5+.
 
 ## Definition
 
-    function caseChange(\Civi\CCase\Analyzer $analyzer)
+    `function caseChange(\Civi\CCase\Analyzer $analyzer)`
 
 ## Parameters
 
--   $analyzer - A bundle of data about the case (such as the case and
+-   `$analyzer` - A bundle of data about the case (such as the case and
     activity records).
 
 ## Returns
