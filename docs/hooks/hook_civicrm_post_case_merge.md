@@ -8,7 +8,7 @@ This hook is called after a case merge happens.
 
 A case merge is when two cases are merged or when a case is reassigned to another client.
 
-Added in CIviCRM 4.5
+Added in CiviCRM 4.5
 
 ## Definition
 

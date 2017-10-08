@@ -14,10 +14,10 @@ Note that this hook is actually an adapter for [hook_civicrm_managed](/hooks/hoo
 
 ## Parameters
 
--   `$caseTypes` array - list of case types; each item is an array with keys:
-    -   `module`: string; for module-extensions, this is the fully-qualifed name (e.g. `com.example.mymodule`); for Drupal modules, the name is prefixed by "drupal" (e.g. `drupal.mymodule`)
-    -   `name`: string, a symbolic name which can be used to track this entity.
-    -   `file`: string, the path to the XML file which defines the case-type
+- `$caseTypes` array - list of case types; each item is an array with keys:
+- `module`: string; for module-extensions, this is the fully-qualified name (e.g. `com.example.mymodule`); for Drupal modules, the name is prefixed by "drupal" (e.g. `drupal.mymodule`)
+- `name`: string, a symbolic name which can be used to track this entity.
+- `file`: string, the path to the XML file which defines the case-type
 
 ## Example
 ```php
