@@ -4,6 +4,14 @@ This page lists changes to CiviCRM core which affect the ways in which developer
 
 ## APIv3: Framework
 
+### 5.13.4 Condition not accepted in getoptions
+
+From 5.13.4 onwards the condition parameter won't be used or accepted by the getoptions api method. See also [CIVI-SA-2019-14](https://civicrm.org/advisory/civi-sa-2019-14-sqli-in-apiv3-getoptions).
+
+### 5.13.4 Integers only accepted in address getoptions
+
+When preparing getoptions for the field `country_id` only integers will be accepted for the `state_province_id` filter. See also [CIVI-SA-2019-12](https://civicrm.org/advisory/civi-sa-2019-12-sqli-in-country-et-al).
+
 ### 5.12 Support for string 'NULL' as an accepted value for custom data fields
 
 The API has now been changed such that when setting the value of a custom field using the API if you pass the string 'NULL' then it will set the field value to be the String NULL not the database NULL. If you want the value to be truely NULL then you need to either not pass in the value or use 'null' instead
