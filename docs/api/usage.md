@@ -117,9 +117,60 @@ The object-oriented client can connect to a local or remote CiviCRM
 instance. For details about connection parameters, see the docblock in
 [class.api.php](https://github.com/civicrm/civicrm-core/blob/master/api/class.api.php).
 
+## PHP API version 4
+
+In API version 4 there are 2 distinct formats for querying the API, firstly an Object Oriented format
+
+```php
+$aCLs = \Civi\Api4\ACL::get()
+  ->setSelect([
+    'id',
+  ])
+  ->addWhere('name', '=', 'hello')
+  ->setLimit(25)
+  ->execute();
+foreach ($aCLs as $aCL) {
+  // do something
+}
+```
+
+There is a traditional format which also is supported by the API version 4
+
+```php
+$aCLs = civicrm_api4('ACL', 'get', [
+  'select' => [
+    'id',
+  ],
+  'where' => [
+    ['name', '=', 'hello'],
+  ],
+  'limit' => 25,
+]);
+```
+
+Both formats will return an [arrayObject](http://php.net/manual/en/class.arrayobject.php). This means that you can loop through the results, and use functions like first() and the like to access reults.
+
+```php
+$result = \Civi\Api4\Contact::get()->execute();
+
+// you can loop through the results directly
+foreach ($result as $contact) {}
+
+// you can just grab the first one
+$contact1 = $result->first();
+
+// reindex results on-the-fly (replacement for sequential=1 in v3)
+$result->indexBy('id');
+
+// or fetch some metadata about the call
+$entity = $result->entity; // "Contact"
+```
+
 ## REST
 
 For external services:
+
+V3
 
 ```text
 http://www.example.com/sites/all/modules/civicrm/extern/rest.php
@@ -134,8 +185,35 @@ http://www.example.com/sites/all/modules/civicrm/extern/rest.php
   &last_name=Roberts
 ```
 
+V4
+```text
+http://www.example.com/sites/all/modules/civicrm/extern/rest.php
+  ?api_key=t0ps3cr3t
+  &key=an07h3rs3cr3t
+  &json=1
+  &debug=1
+  &version=4
+  &entity=Contact
+  &action=get
+  &first_name=Alice
+  &last_name=Roberts
+```
+
 For sessions already authenticated by the CMS (e.g. AJAX)
 
+V3
+```text
+http://www.example.com/civicrm/ajax/rest
+  ?json=1
+  &debug=1
+  &version=3
+  &entity=Contact
+  &action=get
+  &first_name=Alice
+  &last_name=Roberts
+```
+
+V4
 ```text
 http://www.example.com/civicrm/ajax/rest
   ?json=1
@@ -157,8 +235,23 @@ For more details, see [REST interface](/api/interfaces.md#rest). 
 
 ## AJAX
 
+V3
 ```javascript
 CRM.api3('entity', 'action', [params], [statusMessage]);
+```
+
+V4
+```javascript
+CRM.api4('Contact', 'get', params).then(function(result) {
+  // you can loop through the results
+  result.forEach(function(contact, n) {});
+
+  // you can just grab the first one
+  var contact1 = result[0];
+
+  // or fetch some metadata about the call
+  var entity = result.entity; // "Contact"
+});
 ```
 
 For more details, see [AJAX Interface](/api/interfaces.md#ajax).

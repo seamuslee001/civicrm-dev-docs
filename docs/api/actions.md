@@ -22,6 +22,8 @@ Search for records
 Search for records and return the first or only match. (Note: This
 returns the record in a simplified format which is easy to use)
 
+**Deprecated**: This has been removed in API Version 4
+
 ## getvalue
 Does a `getsingle` and returns a single value - you need to also set
 `$param['return'] => 'fieldname'`.
@@ -81,7 +83,7 @@ Returns all unique fields (other than 'id' field) for a given entity.
 civicrm_api3('Contribution', 'getunique');
 ```
 
-return 
+return
 
 ```php
 {

@@ -46,9 +46,10 @@ pages:
     - Creating a Payment Processor: extensions/payment-processors/create.md
   - CMS-specific development: extensions/cms-specific.md
 - API:
-  - APIv3 Intro: api/index.md
-  - APIv3 Usage: api/usage.md
-  - APIv3 Actions: api/actions.md
+  - API Intro: api/index.md
+  - API Usage: api/usage.md
+  - API Actions: api/actions.md
+  - API Architecture: api/architecture.md
   - APIv3 Options: api/options.md
   - APIv3 Joins: api/joins.md
   - APIv3 Chaining: api/chaining.md
