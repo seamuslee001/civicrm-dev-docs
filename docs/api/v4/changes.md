@@ -1,6 +1,6 @@
-# APIv3 changes
+# APIv4 Changes
 
-This page lists changes to CiviCRM core and API Extension Code (prior to CiviCRM version 5.19) which affect the ways in which developers use the APIv4.
+This page lists changes to CiviCRM Core and API Extension Code (prior to CiviCRM version 5.19) which affect the ways in which developers use APIv4.
 
 ## APIv4 Extension version 4.5.0 - default Location Type and default where values
 
