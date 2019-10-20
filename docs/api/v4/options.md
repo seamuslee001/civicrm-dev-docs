@@ -1,15 +1,15 @@
 # APIv4 Options
 
-There are many API Options accepted by the CiviCRM API. These options allow the developer to add in more parameters to the resulting Query that is run against the database. E.g. Limit, Sort. You can explore these options using the the [API Explorer](/api/index.md#api-explorer) Unlike in APIv3 setting the options is not contained within an array of options in the parameters array.
+There are many API Options accepted by the CiviCRM API. These options allow the developer to add in more parameters to the resulting Query that is run against the database. E.g. Limit, Sort. You can explore these options using the the [API Explorer](/api/index.md#api-explorer) In APIv3 options were set as keys of an array called options within the parameters array. In APIv4 tthey are just passed in as another parameter not in a nested array.
 
 
-## Orderby
+## OrderBy
 
 -   **Action**: get
 -   **Type**: string
 -   **Default** id ASC
 
-Determine what the orer of the records should be. This was either done with `options.sort` or `options.sequential` in APIv3
+Determine what the order of the records should be. This was either done with `options.sort` or `options.sequential` in APIv3
 
 ```php
 $results = \Civi\Api4\UFMatch::get()
